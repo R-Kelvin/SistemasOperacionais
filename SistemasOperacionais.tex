@@ -224,4 +224,106 @@ Além disso, cada processo possui um identificador chamado PID (\textit{Process 
 
 Nas distribuições Linux modernas, o primeiro processo criado pelo kernel possui PID 1 e geralmente corresponde ao \textit{systemd}, responsável por iniciar todos os outros serviços do sistema.
 
+\subsection{Gerenciamento de Memória}
+
+Outra função essencial do kernel é controlar a memória RAM.
+
+Cada programa precisa de uma determinada quantidade de memória para funcionar, e o kernel garante que um processo não interfira na área de memória utilizada por outro.
+
+O Linux utiliza um mecanismo chamado \textit{Memória Virtual}. Nesse sistema, cada programa acredita que possui uma área exclusiva de memória, mesmo que esteja compartilhando a RAM com outros processos.
+
+Quando a memória RAM está quase cheia, o Linux pode utilizar uma área do disco chamada \textit{Swap}, que funciona como uma memória auxiliar.
+
+Embora o \textit{Swap} seja mais lento que a RAM, ele ajuda a evitar travamentos quando muitos programas estão abertos.
+
+\subsection{Sistema de Arquivos}
+
+No Linux, praticamente tudo é tratado como um arquivo.
+
+Além dos documentos tradicionais, dispositivos como discos, teclados, mouses e impressoras também são representados como arquivos especiais.
+
+Toda a estrutura do sistema começa no diretório raiz, representado pelo símbolo \texttt{/}.
+
+A partir dele surgem diversas pastas importantes:
+
+\begin{itemize}
+\item \texttt{/boot}: contém os arquivos necessários para a inicialização do sistema;
+\item \texttt{/home}: armazena os arquivos pessoais dos usuários;
+\item \texttt{/etc}: guarda arquivos de configuração;
+\item \texttt{/dev}: representa os dispositivos de hardware;
+\item \texttt{/proc}: fornece informações sobre os processos e sobre o kernel;
+\item \texttt{/var}: armazena logs e arquivos que mudam constantemente.
+\end{itemize}
+
+\subsection{Drivers de Dispositivos}
+
+Os drivers são pequenos programas que permitem a comunicação entre o kernel e os componentes físicos do computador.
+
+Quando um usuário conecta um pendrive, por exemplo, o kernel detecta automaticamente o novo dispositivo, identifica qual driver deve ser utilizado e disponibiliza seu acesso ao sistema.
+
+\subsection{Chamadas de Sistema (\textit{System Calls})}
+
+Os programas não podem acessar diretamente o hardware.
+
+Sempre que precisam realizar alguma operação, eles utilizam funções chamadas \textit{System Calls}.
+
+Por exemplo, ao abrir um arquivo, o programa solicita essa operação ao kernel através de uma chamada de sistema.
+
+O kernel verifica se o arquivo existe, se o usuário possui permissão para acessá-lo e em qual local do disco ele está armazenado.
+
+Somente depois dessas verificações o conteúdo é enviado ao programa.
+
+Esse mecanismo aumenta a segurança e impede que aplicativos acessem recursos de maneira descontrolada.
+
+\subsection{Segurança e Permissões}
+
+O Linux possui um sistema robusto de permissões.
+
+Cada arquivo possui um proprietário, um grupo e três tipos básicos de autorização:
+
+\begin{itemize}
+\item Leitura;
+\item Escrita;
+\item Execução.
+\end{itemize}
+
+Isso impede que usuários comuns alterem arquivos críticos do sistema sem autorização administrativa.
+
+Esse modelo de segurança é um dos motivos pelos quais o Linux é amplamente utilizado em servidores e ambientes corporativos.
+
+\subsection{Kernel Monolítico}
+
+O Linux utiliza uma arquitetura chamada \textit{Kernel Monolítico}.
+
+Isso significa que seus principais serviços, como gerenciamento de processos, memória, sistema de arquivos, drivers e rede, ficam integrados dentro do próprio kernel.
+
+A principal vantagem desse modelo é o alto desempenho, pois a comunicação entre os componentes acontece de forma muito rápida.
+
+Por outro lado, um erro em um driver ou em alguma parte do kernel pode afetar todo o sistema.
+
+\subsection{Exemplo Prático}
+
+Para entender melhor, imagine que um usuário deseja abrir uma fotografia armazenada no computador.
+
+\begin{enumerate}
+\item O usuário clica duas vezes sobre a imagem;
+\item O visualizador de imagens envia uma solicitação para as bibliotecas do sistema;
+\item As bibliotecas realizam uma chamada de sistema para o kernel;
+\item O kernel verifica as permissões do usuário;
+\item O kernel localiza o arquivo no SSD;
+\item O hardware realiza a leitura dos dados;
+\item O kernel devolve as informações ao programa;
+\item O programa exibe a fotografia na tela.
+\end{enumerate}
+
+Todo esse processo acontece em poucos milissegundos.
+
+\subsection{Conclusão}
+
+Podemos concluir que o Linux funciona como um grande administrador dos recursos do computador.
+
+Seu kernel atua como uma ponte entre os aplicativos e o hardware, controlando a memória, o processador, os dispositivos, os arquivos e a segurança do sistema.
+
+Graças a essa arquitetura em camadas e ao eficiente gerenciamento de recursos, o Linux tornou-se um dos sistemas operacionais mais utilizados do mundo, estando presente em computadores pessoais, servidores, supercomputadores e dispositivos móveis, como o Android.
+
 \end{document}
