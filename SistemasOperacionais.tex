@@ -1,0 +1,165 @@
+
+\documentclass{article}
+
+\usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm,a4paper]{geometry}
+\usepackage{anyfontsize}
+\usepackage[indent=0cm,skip=.1cm]{parskip}
+\usepackage[brazil]{babel}
+
+\begin{document}
+\fontsize{12pt}{18pt}\selectfont
+
+%=====================================
+% CAPA
+%=====================================
+
+\begin{titlepage}
+
+\begin{center}
+
+FACULDADE MAURÍCIO DE NASSAU
+
+\vspace{2cm}
+
+Phellipe de Amorim martins - 01782567
+
+Anthony Gabriel Lemos Baracho - 01813891
+
+Ruan Kelvin Vieira dos Santos - 01797916
+
+Everton Hasabias Furtunato Celestino - 1796727
+
+Adriano Silva do Nascimento - 01769583
+
+Fernanda Nogueira de França - 01735985
+
+\vfill
+
+{\fontsize{16pt}{20pt}\selectfont\textbf{SISTEMAS OPERACIONAIS}}
+
+\vspace{0.5cm}
+
+
+\vfill
+
+Maceió - AL
+
+Junho de 2026
+
+\end{center}
+
+\end{titlepage}
+
+%=====================================
+% FOLHA DE ROSTO
+%=====================================
+
+\begin{titlepage}
+
+\begin{center}
+
+Phellipe de Amorim martins - 01782567
+
+Anthony Gabriel Lemos Baracho - 01813891
+
+Ruan Kelvin Vieira dos Santos - 01797916
+
+Everton Hasabias Furtunato Celestino - 1796727
+
+Adriano Silva do Nascimento - 01769583
+
+Fernanda Nogueira de França - 01735985
+
+\vspace{6cm}
+
+{\fontsize{16pt}{20pt}\selectfont\textbf{SISTEMAS OPERACIONAIS}}
+
+\vspace{0.5cm}
+
+
+\end{center}
+
+\vspace{3cm}
+
+\hspace*{7cm}
+\parbox{8cm}{
+Trabalho apresentado à disciplina de
+Sistemas Operacionais do curso de
+Ciências da Computação da Faculdade Maurício de Nassau,
+como requisito para obtenção de nota.
+
+\vspace{0.5cm}
+
+Professor(a): Anderlan Henrique Batista Siqueira
+}
+
+\vfill
+
+\begin{center}
+
+Maceió - AL
+
+Junho de 2026
+
+\end{center}
+
+\end{titlepage}
+
+\tableofcontents
+\newpag
+
+\clearpage
+
+\section{Introdução ao Conceito de Sistema Operacional}
+Antes de compreender o que é o Linux, é fundamental estabelecer a definição de um Sistema Operacional (SO). Um SO é o software responsável por:
+\begin{itemize}
+    \item Gerenciar a parte física do computador (hardware), incluindo o processador, a memória RAM e os dispositivos de armazenamento.
+    \item Coordenar e gerir a execução de outros programas e processos.
+    \item Prover, em muitos casos, uma interface para a interação humana.
+\end{itemize}
+Sistemas como Windows da Microsoft, macOS da Apple e o próprio Linux são popularmente categorizados como sistemas operacionais devido ao cumprimento dessas funções.
+
+\subsection{A Real Definição: O Linux como Kernel}
+O principal mal-entendido entre o público geral é a concepção de que o Linux é um sistema operacional completo e pronto por si só. Tecnicamente, o \textbf{Linux é um Kernel} (núcleo).
+
+O Kernel desempenha o papel mais crítico em um ecossistema computacional:
+\begin{itemize}
+    \item Atua como uma ponte de comunicação direta que traduz as instruções dos softwares para o hardware.
+    \item Concentra e gerencia os drivers de todos os dispositivos conectados.
+\end{itemize}
+Diferente do Windows (que utiliza o Kernel \textit{NT}) e do macOS (que se baseia no Kernel \textit{Darwin}), o Linux não possui um kernel à parte; ele \textit{é} o próprio Kernel.
+
+\subsection{A Analogia Automotiva}
+Para fins de simplificação didática, o ecossistema dos sistemas operacionais pode ser comparado à indústria automobilística:
+\begin{description}
+    \item[Windows:] Representa um carro popular completo (com motor, rodas e carroceria) construído integralmente pela Microsoft, que detém o controle total e cobra por sua licença de uso.
+    \item[macOS:] Equivale a um carro gratuito fornecido pela Apple, com a restrição de que o usuário só pode dirigir dentro de um ecossistema fechado (uma ``cidade'' controlada pela marca), onde o custo de vida é elevado.
+    \item[Linux:] Não representa o veículo completo, mas sim o \textbf{motor}. Trata-se de um propulsor altamente versátil, gratuito e de código aberto. O usuário recebe o motor junto com o manual completo de instruções, possuindo total liberdade para utilizá-lo na construção de um carro, de uma moto ou de um gerador de energia elétrica.
+\end{description}
+
+\subsection{Distribuições Linux (Distros)}
+Dado que um motor de maneira isolada não possui utilidade prática de locomoção, surgem as chamadas \textbf{Distribuições Linux}, ou simplesmente \textbf{Distros}. Elas são os veículos completos montados por comunidades ou corporações que unem o Kernel Linux a um conjunto de softwares e interfaces gráficas.
+\begin{itemize}
+    \item \textbf{Ubuntu:} Sistema desenvolvido pela empresa britânica Canonical, focado em entregar uma experiência familiar e completa para computadores de mesa e laptops.
+    \item \textbf{Android:} Desenvolvido pela Google utilizando o Kernel Linux como base, adaptado para operar em smartphones de forma distinta dos desktops tradicionais.
+    \item \textbf{ChromeOS:} Outra solução da Google baseada no mesmo núcleo, mas focada no mercado de laptops leves (Chromebooks).
+\end{itemize}
+
+\subsection{Desenvolvimento Colaborativo e Modelo Open Source}
+O Kernel Linux foi originalmente concebido por Linus Torvalds em 1991, que ainda permanece como um de seus engenheiros principais. Devido à sua natureza de código aberto e licença permissiva para modificação, ele é mantido por uma vasta comunidade global:
+\begin{itemize}
+    \item Milhares de desenvolvedores voluntários e corporações líderes de tecnologia (incluindo a própria Microsoft) colaboram para seu aprimoramento.
+    \item Cada entidade desenvolve e otimiza o código para atender às suas necessidades de mercado específicas, o que contribui de forma agregada para a robustez e versatilidade do kernel para todos os usuários.
+\end{itemize}
+
+\subsection{Presença do Linux no Mercado}
+Apesar de não deter a liderança de mercado em computadores domésticos tradicionais (desktops), o Linux apresenta dominância absoluta em quase todas as outras verticais tecnológicas do planeta:
+\begin{itemize}
+    \item \textbf{Infraestrutura Web:} Servidores de internet e grandes centrais de processamento de dados (como data centers de hospedagem).
+    \item \textbf{Dispositivos Móveis e IoT:} Bilhões de smartphones com sistema Android, televisores inteligentes e eletrodomésticos conectados.
+    \item \textbf{Alta Tecnologia e Ciência:} Supercomputadores, robótica aeroespacial, caixas de autoatendimento bancário e sistemas de grande escala científica, como o acelerador de partículas do CERN.
+\end{itemize}
+
+
+
+\end{document}
