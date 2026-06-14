@@ -174,4 +174,54 @@ Com o passar dos anos, diversos desenvolvedores passaram a contribuir com o proj
 Além da colaboração da comunidade, diversas empresas também passaram a investir no desenvolvimento do Linux e de ferramentas complementares, tornando-o cada vez mais robusto e confiável.
 
 Assim, o Linux nasceu como um projeto pessoal de um estudante universitário e, graças ao desenvolvimento colaborativo e ao modelo de software livre, tornou-se um dos sistemas operacionais mais importantes do mundo, sendo utilizado em servidores, supercomputadores, dispositivos embarcados e até mesmo no Android.
+
+\section{Como o Linux Funciona Internamente}
+Antes de tudo, é importante entender que o Linux é formado por várias camadas que trabalham juntas para permitir a comunicação entre o usuário e o hardware do computador.
+
+Podemos imaginar essa estrutura como uma pirâmide. Na base está o hardware, acima dele fica o kernel, depois vêm as bibliotecas do sistema, o shell e, por último, as aplicações utilizadas pelo usuário.
+
+Quando uma pessoa utiliza um programa, como um navegador ou um editor de texto, esse programa não conversa diretamente com o hardware. Toda comunicação passa pelo kernel, que é o núcleo do sistema operacional.
+
+\subsection{Processo de Inicialização (Boot)}
+
+O funcionamento do Linux começa no momento em que o computador é ligado.
+
+A primeira coisa executada é a BIOS ou a UEFI, um pequeno software gravado na placa-mãe. Sua função é verificar se os componentes físicos do computador estão funcionando corretamente, como a memória RAM, o processador e os dispositivos conectados.
+
+Depois dessa verificação, a BIOS ou UEFI procura um sistema operacional para iniciar. Nesse momento entra em ação o \textit{Bootloader}, que normalmente é o GRUB.
+
+O GRUB é responsável por localizar o kernel Linux no disco rígido ou SSD e carregá-lo para a memória RAM.
+
+A sequência de inicialização pode ser representada da seguinte forma:
+
+\begin{center}
+Computador $\rightarrow$ BIOS/UEFI $\rightarrow$ GRUB $\rightarrow$ Kernel Linux
+\end{center}
+
+Após ser carregado, o kernel assume completamente o controle do computador.
+
+\subsection{O Kernel}
+
+O kernel é a parte mais importante do Linux. Ele funciona como um intermediário entre os programas e o hardware.
+
+Sempre que um aplicativo precisa realizar alguma tarefa, como abrir um arquivo, acessar a internet ou imprimir um documento, ele envia uma solicitação ao kernel.
+
+O kernel recebe essa solicitação, verifica se ela pode ser executada, acessa o hardware necessário e devolve a resposta ao programa.
+
+Por esse motivo, o kernel é frequentemente chamado de ``coração'' do sistema operacional.
+
+\subsection{Gerenciamento de Processos}
+
+Uma das principais funções do kernel é controlar os processos.
+
+Um processo é qualquer programa que esteja em execução. Por exemplo, se uma pessoa estiver utilizando um navegador, um editor de texto e um reprodutor de música ao mesmo tempo, cada um deles será tratado pelo kernel como um processo diferente.
+
+Como existe apenas um processador, o kernel precisa decidir qual processo utilizará a CPU em cada instante. Esse trabalho é realizado pelo escalonador de processos, também chamado de \textit{Scheduler}.
+
+O \textit{Scheduler} divide o tempo do processador em pequenas frações, alternando rapidamente entre os programas. Essa troca acontece milhares de vezes por segundo, criando a sensação de que todos os aplicativos estão funcionando simultaneamente.
+
+Além disso, cada processo possui um identificador chamado PID (\textit{Process ID}), que serve para diferenciá-lo dos demais.
+
+Nas distribuições Linux modernas, o primeiro processo criado pelo kernel possui PID 1 e geralmente corresponde ao \textit{systemd}, responsável por iniciar todos os outros serviços do sistema.
+
 \end{document}
